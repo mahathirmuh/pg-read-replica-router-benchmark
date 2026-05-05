@@ -220,7 +220,7 @@ class QueryRouter:
         t_query_start = time.perf_counter()
 
         try:
-            async with pool.acquire() as conn:
+            async with pool.acquire(timeout=5.0) as conn:
                 if is_read:
                     result = await conn.fetch(query, *args)
                 else:
@@ -264,7 +264,7 @@ class QueryRouter:
 
         t_query_start = time.perf_counter()
         try:
-            async with self._primary_pool.acquire() as conn:
+            async with self._primary_pool.acquire(timeout=5.0) as conn:
                 status = await conn.execute(query, *args)
         except Exception as e:
             logger.error(f"Write error on primary: {e}")

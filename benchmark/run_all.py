@@ -192,7 +192,7 @@ async def run_all(
                 seed=seed,
             )
 
-            result = await runner.run()
+            result = await asyncio.wait_for(runner.run(), timeout=duration_s + 180)
             save_result(results_dir, key, result)
 
             elapsed = time.monotonic() - t0

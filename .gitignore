@@ -1,0 +1,3 @@
+# Ignore local benchmark logs and large artifacts
+*.log
+benchmark_error.log
