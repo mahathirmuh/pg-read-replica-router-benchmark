@@ -1,25 +1,25 @@
 {
-  "read_avg_ms": 50.89061029783366,
-  "read_p95_ms": 131.09899999108166,
-  "throughput_qps": 1004.8212889989941,
-  "load_cv": 1.5889030498726309,
+  "read_avg_ms": 37.8583110908245,
+  "read_p95_ms": 94.19279999565333,
+  "throughput_qps": 1353.3189900124028,
+  "load_cv": 1.6095308685313514,
   "per_replica_cpu": {
-    "replica1": 10.745762711864407,
-    "replica3": 10.51271186440678,
-    "replica2": 10.588983050847459
+    "replica2": 10.672268907563025,
+    "replica3": 10.512605042016807,
+    "replica1": 10.743697478991596
   },
-  "avg_cpu_pct": 10.615819209039548,
+  "avg_cpu_pct": 10.642857142857142,
   "staleness_pct": 0.0,
-  "router_overhead_ms": 0.007445171324935925,
+  "router_overhead_ms": 0.003358473284642944,
   "replica_query_counts": {
-    "replica1": 565151,
-    "primary": 30060,
-    "replica2": 4951,
-    "replica3": 2778
+    "replica1": 768308,
+    "primary": 40438,
+    "replica2": 2255,
+    "replica3": 1054
   },
-  "total_queries": 602940,
-  "total_reads": 572880,
-  "total_writes": 30060,
+  "total_queries": 812055,
+  "total_reads": 771617,
+  "total_writes": 40438,
   "duration_s": 600.0470000000205,
   "config": {
     "strategy": "load_based",
@@ -34,15 +34,15 @@
     {
       "name": "replica1",
       "healthy": true,
-      "ema_latency_ms": 39.58,
+      "ema_latency_ms": 25.02,
       "cpu_pct": 10.5,
-      "active_connections": 1,
+      "active_connections": 2,
       "weight": 4
     },
     {
       "name": "replica2",
       "healthy": true,
-      "ema_latency_ms": 6.68,
+      "ema_latency_ms": 3.36,
       "cpu_pct": 10.5,
       "active_connections": 1,
       "weight": 2
@@ -50,7 +50,7 @@
     {
       "name": "replica3",
       "healthy": true,
-      "ema_latency_ms": 7.0,
+      "ema_latency_ms": 3.78,
       "cpu_pct": 10.5,
       "active_connections": 1,
       "weight": 1

@@ -222,9 +222,9 @@ class QueryRouter:
         try:
             async with pool.acquire(timeout=5.0) as conn:
                 if is_read:
-                    result = await conn.fetch(query, *args)
+                    result = await conn.fetch(query, *args, timeout=120)
                 else:
-                    result = await conn.fetch(query, *args)
+                    result = await conn.fetch(query, *args, timeout=120)
         except Exception as e:
             logger.error(f"Query error on {target_name}: {e}")
             raise

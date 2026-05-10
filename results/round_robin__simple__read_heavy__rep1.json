@@ -1,32 +1,32 @@
 {
-  "read_avg_ms": 9.50149310517349,
-  "read_p95_ms": 16.40739996219054,
-  "throughput_qps": 1018.1333333333333,
-  "load_cv": 0.46008072442890224,
+  "read_avg_ms": 14.047213612156867,
+  "read_p95_ms": 18.893999978899956,
+  "throughput_qps": 3449.485109936222,
+  "load_cv": 0.46194035490060215,
   "per_replica_cpu": {
-    "replica2": 4.416666666666667,
-    "replica1": 3.5000000000000004,
-    "replica3": 6.0
+    "replica2": 9.550420168067227,
+    "replica3": 10.747899159663865,
+    "replica1": 9.72689075630252
   },
-  "avg_cpu_pct": 4.638888888888889,
+  "avg_cpu_pct": 10.008403361344536,
   "staleness_pct": 0.0,
-  "router_overhead_ms": 0.005511174100580332,
+  "router_overhead_ms": 0.001692047450724053,
   "replica_query_counts": {
-    "replica2": 9665,
-    "replica1": 9664,
-    "replica3": 9664,
-    "primary": 1551
+    "replica1": 655454,
+    "replica2": 655454,
+    "replica3": 655454,
+    "primary": 103436
   },
-  "total_queries": 30544,
-  "total_reads": 28993,
-  "total_writes": 1551,
-  "duration_s": 30.0,
+  "total_queries": 2069798,
+  "total_reads": 1966362,
+  "total_writes": 103436,
+  "duration_s": 600.030999999959,
   "config": {
     "strategy": "round_robin",
     "complexity": "simple",
     "workload": "read_heavy",
-    "duration_s": 30,
-    "concurrency": 10,
+    "duration_s": 600,
+    "concurrency": 50,
     "seed": 142
   },
   "errors": 0,
@@ -34,25 +34,25 @@
     {
       "name": "replica1",
       "healthy": true,
-      "ema_latency_ms": 6.86,
-      "cpu_pct": 3.5,
+      "ema_latency_ms": 8.77,
+      "cpu_pct": 9.5,
       "active_connections": 1,
       "weight": 4
     },
     {
       "name": "replica2",
       "healthy": true,
-      "ema_latency_ms": 6.11,
-      "cpu_pct": 4.5,
-      "active_connections": 1,
+      "ema_latency_ms": 8.58,
+      "cpu_pct": 9.0,
+      "active_connections": 2,
       "weight": 2
     },
     {
       "name": "replica3",
       "healthy": true,
-      "ema_latency_ms": 7.33,
-      "cpu_pct": 6.0,
-      "active_connections": 2,
+      "ema_latency_ms": 9.3,
+      "cpu_pct": 10.5,
+      "active_connections": 1,
       "weight": 1
     }
   ]
