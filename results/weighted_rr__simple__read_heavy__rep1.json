@@ -1,32 +1,32 @@
 {
-  "read_avg_ms": 9.473892872260638,
-  "read_p95_ms": 14.390700031071901,
-  "throughput_qps": 1019.3333333333334,
-  "load_cv": 0.7449187983541485,
+  "read_avg_ms": 13.878142192736854,
+  "read_p95_ms": 21.681899903342128,
+  "throughput_qps": 3313.80682764363,
+  "load_cv": 0.7465047152443327,
   "per_replica_cpu": {
-    "replica3": 4.166666666666667,
-    "replica2": 4.166666666666667,
-    "replica1": 4.916666666666667
+    "replica2": 8.5,
+    "replica1": 10.747899159663865,
+    "replica3": 6.168067226890757
   },
-  "avg_cpu_pct": 4.416666666666667,
+  "avg_cpu_pct": 8.471988795518207,
   "staleness_pct": 0.0,
-  "router_overhead_ms": 0.02515292037787017,
+  "router_overhead_ms": 0.0076004726830512905,
   "replica_query_counts": {
-    "replica2": 8293,
-    "replica1": 16587,
-    "replica3": 4147,
-    "primary": 1553
+    "replica1": 1080304,
+    "replica3": 270076,
+    "replica2": 540152,
+    "primary": 99409
   },
-  "total_queries": 30580,
-  "total_reads": 29027,
-  "total_writes": 1553,
-  "duration_s": 30.0,
+  "total_queries": 1989941,
+  "total_reads": 1890532,
+  "total_writes": 99409,
+  "duration_s": 600.5,
   "config": {
     "strategy": "weighted_rr",
     "complexity": "simple",
     "workload": "read_heavy",
-    "duration_s": 30,
-    "concurrency": 10,
+    "duration_s": 600,
+    "concurrency": 50,
     "seed": 142
   },
   "errors": 0,
@@ -34,24 +34,24 @@
     {
       "name": "replica1",
       "healthy": true,
-      "ema_latency_ms": 6.04,
-      "cpu_pct": 5.0,
+      "ema_latency_ms": 11.81,
+      "cpu_pct": 10.5,
       "active_connections": 1,
       "weight": 4
     },
     {
       "name": "replica2",
       "healthy": true,
-      "ema_latency_ms": 6.15,
-      "cpu_pct": 4.5,
+      "ema_latency_ms": 13.05,
+      "cpu_pct": 8.5,
       "active_connections": 1,
       "weight": 2
     },
     {
       "name": "replica3",
       "healthy": true,
-      "ema_latency_ms": 6.47,
-      "cpu_pct": 5.0,
+      "ema_latency_ms": 14.47,
+      "cpu_pct": 7.0,
       "active_connections": 1,
       "weight": 1
     }

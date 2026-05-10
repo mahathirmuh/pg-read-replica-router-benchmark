@@ -1,26 +1,26 @@
 {
-  "read_avg_ms": 55.54442846592926,
-  "read_p95_ms": 182.94850003439933,
-  "throughput_qps": 927.0922893380788,
-  "load_cv": 0.4627061873492814,
+  "read_avg_ms": 57.124982433705235,
+  "read_p95_ms": 208.9896999532357,
+  "throughput_qps": 908.4266666666666,
+  "load_cv": 0.4627225305254556,
   "per_replica_cpu": {
-    "replica1": 9.495689655172415,
-    "replica2": 10.663793103448276,
-    "replica3": 10.745689655172415
+    "replica1": 8.982905982905983,
+    "replica2": 8.863247863247864,
+    "replica3": 10.760683760683762
   },
-  "avg_cpu_pct": 10.301724137931034,
+  "avg_cpu_pct": 9.535612535612536,
   "staleness_pct": 0.0,
-  "router_overhead_ms": 0.004515977413740878,
+  "router_overhead_ms": 0.0020537728927795245,
   "replica_query_counts": {
-    "replica2": 176260,
-    "replica3": 176259,
-    "replica1": 176260,
-    "primary": 27621
+    "replica3": 172667,
+    "replica2": 172667,
+    "replica1": 172668,
+    "primary": 27054
   },
-  "total_queries": 556400,
-  "total_reads": 528779,
-  "total_writes": 27621,
-  "duration_s": 600.1560000000172,
+  "total_queries": 545056,
+  "total_reads": 518002,
+  "total_writes": 27054,
+  "duration_s": 600.0,
   "config": {
     "strategy": "round_robin",
     "complexity": "medium",
@@ -34,25 +34,25 @@
     {
       "name": "replica1",
       "healthy": true,
-      "ema_latency_ms": 4.3,
-      "cpu_pct": 9.0,
-      "active_connections": 1,
+      "ema_latency_ms": 80.56,
+      "cpu_pct": 10.0,
+      "active_connections": 5,
       "weight": 4
     },
     {
       "name": "replica2",
       "healthy": true,
-      "ema_latency_ms": 3.96,
-      "cpu_pct": 10.5,
-      "active_connections": 1,
+      "ema_latency_ms": 111.5,
+      "cpu_pct": 9.0,
+      "active_connections": 2,
       "weight": 2
     },
     {
       "name": "replica3",
       "healthy": true,
-      "ema_latency_ms": 181.33,
+      "ema_latency_ms": 278.17,
       "cpu_pct": 10.5,
-      "active_connections": 3,
+      "active_connections": 9,
       "weight": 1
     }
   ]
