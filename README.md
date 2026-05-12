@@ -562,12 +562,12 @@ python benchmark/run_all.py     # ❌ Bisa error import
 
 ## 👤 Author
 
-**Mahathir Muhammad**
-**Obi Kastanya**
-**Ananta Dwi Prayoga Alwy**
-Program Studi S2 — Teknik Informatika 
-Mata Kuliah: Komputasi Berbasis Jaringan dan Fungsi Perangkat Lunak
-
+- **Mahathir Muhammad**
+- **Obi Kastanya**
+- **Ananta Dwi Prayoga Alwy**
+- Program Studi S2 — Teknik Informatika 
+- Mata Kuliah : Komputasi Berbasis Jaringan
+- Dosen Pengampu : Bagus Jati Santoso, S.Kom., Ph.D.
 ---
 
 ## Lisensi
