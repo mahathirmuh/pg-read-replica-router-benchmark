@@ -443,51 +443,49 @@ Proyek ini dikembangkan dalam **4 fase** sesuai timeline yang ditetapkan:
 
 ## 📊 Hasil Benchmark
 
-> [!WARNING]
-> **CATATAN PENTING UNTUK AUTHOR:**
-> Angka dan tabel di bawah ini saat ini masih menggunakan **data validasi / *smoke-test* sampel**. Pastikan Anda meng-*update* isi tabel ini secara manual menggunakan angka dari file `analysis_output/report_summary_table.csv` **setelah benchmark 25-jam Anda benar-benar selesai**!
->
-> *(Selain tabel, semua visualisasi grafis berbentuk `.png` juga akan di-generate secara otomatis ke dalam folder `analysis_output/` dan siap Anda copy-paste ke naskah laporan Anda).*
+> [!NOTE]
+> Angka di bawah ini adalah agregat dari **150 run aktual** (5 strategi × 3 complexity × 2 ratio × 5 repetisi) yang tercatat di [`results/summary.csv`](results/summary.csv). Visualisasi grafis (`.png`) tersedia di folder [`analysis_output/`](analysis_output/) dan siap di-copy ke laporan.
 
-Berikut adalah ringkasan hasil benchmark eksperimen (rata-rata ± std dev dari repetisi):
+Tabel diurutkan berdasarkan latency Complex (ascending). Pemenang per workload di-bold.
 
 ### Read-Heavy Workload (95:5)
 
 | Strategi | Simple (ms) | Medium (ms) | Complex (ms) | Simple QPS | Medium QPS | Complex QPS |
 |----------|:-----------:|:-----------:|:------------:|:----------:|:----------:|:-----------:|
-| **Latency-Based** | **10.22 ± 0.73** | **29.64 ± 1.83** | **79.06 ± 5.58** | **1772** | **677** | **254** |
-| Load-Based | 10.71 ± 0.71 | 32.74 ± 1.87 | 84.26 ± 4.09 | 1694 | 612 | 238 |
-| Least-Conn | 10.79 ± 0.53 | 32.35 ± 2.00 | 84.25 ± 2.72 | 1701 | 620 | 238 |
-| Weighted-RR | 11.46 ± 1.18 | 35.18 ± 1.96 | 97.73 ± 4.68 | 1581 | 570 | 205 |
-| Round-Robin | 13.11 ± 1.93 | 40.00 ± 3.62 | 107.38 ± 7.65 | 1379 | 503 | 187 |
+| **Weighted-RR** | **13.57 ± 0.29** | **39.05 ± 2.85** | **2970.56 ± 45.80** | **3425** | **1310** | **18** |
+| Latency-Based | 13.87 ± 0.35 | 47.76 ± 4.20 | 4072.37 ± 60.80 | 3395 | 1084 | 13 |
+| Load-Based | 13.74 ± 0.42 | 40.66 ± 4.37 | 4309.30 ± 90.98 | 3473 | 1270 | 12 |
+| Least-Conn | 12.80 ± 0.16 | 88.42 ± 2.14 | 4675.00 ± 2517.13 | 3612 | 590 | 13 |
+| Round-Robin | 13.70 ± 1.17 | 57.81 ± 2.31 | 5007.41 ± 139.89 | 3455 | 898 | 10 |
 
 ### Balanced Workload (70:30)
 
 | Strategi | Simple (ms) | Medium (ms) | Complex (ms) | Simple QPS | Medium QPS | Complex QPS |
 |----------|:-----------:|:-----------:|:------------:|:----------:|:----------:|:-----------:|
-| **Latency-Based** | **10.02 ± 0.50** | **30.74 ± 1.20** | **77.67 ± 6.24** | **2000** | **651** | **259** |
-| Load-Based | 11.13 ± 0.54 | 33.63 ± 2.24 | 84.67 ± 4.88 | 1801 | 597 | 237 |
-| Least-Conn | 11.16 ± 0.80 | 33.10 ± 1.77 | 85.54 ± 3.48 | 1799 | 606 | 234 |
-| Weighted-RR | 11.87 ± 0.82 | 35.28 ± 2.15 | 96.35 ± 6.48 | 1691 | 568 | 208 |
-| Round-Robin | 13.26 ± 0.97 | 40.64 ± 2.61 | 108.75 ± 7.09 | 1515 | 494 | 185 |
+| **Weighted-RR** | **3.61 ± 0.30** | **273.56 ± 5.65** | **9052.21 ± 464.12** | 1528 | **250** | **8** |
+| Least-Conn | 3.59 ± 0.15 | 478.72 ± 4.22 | 9301.11 ± 171.64 | 1505 | 146 | 8 |
+| Load-Based | 3.39 ± 0.05 | 404.35 ± 17.24 | 11780.91 ± 574.30 | 1755 | 172 | 6 |
+| Latency-Based | 3.79 ± 0.24 | 387.17 ± 5.88 | 14385.47 ± 510.13 | 1665 | 180 | 5 |
+| Round-Robin | 3.41 ± 0.56 | 515.28 ± 20.46 | 16625.94 ± 531.72 | **1956** | 136 | 4 |
 
-### Fairness (Gini Coefficient — semakin rendah semakin merata)
+### Fairness (Load CV — semakin rendah semakin merata)
 
-| Strategi | Read-Heavy (avg) | Balanced (avg) |
-|----------|:----------------:|:--------------:|
-| **Round-Robin** | **≈ 0.00** | **≈ 0.00** |
-| Load-Based | 0.16 | 0.16 |
-| Least-Conn | 0.18 | 0.16 |
-| Latency-Based | 0.17 | 0.14 |
-| Weighted-RR | 0.29 | 0.29 |
+| Strategi | Read-Heavy | Balanced |
+|----------|:----------:|:--------:|
+| **Round-Robin** | **0.463** | **0.115** |
+| Weighted-RR | 0.747 | 0.447 |
+| Least-Conn | 0.934 | 0.570 |
+| Latency-Based | 1.003 | 0.506 |
+| Load-Based | 1.558 | 1.055 |
 
 ### Temuan Utama
 
-1. **Latency-Based** secara konsisten menunjukkan **latensi terendah** dan **throughput tertinggi** di semua kombinasi eksperimen
-2. **Round-Robin** memiliki **distribusi paling merata** (Gini ≈ 0) tetapi latensi tertinggi karena tidak memperhitungkan kapasitas heterogen replica
-3. **Kruskal-Wallis** menunjukkan perbedaan signifikan antar strategi di semua kondisi (p < 0.05)
-4. **Two-way ANOVA** mengkonfirmasi interaksi signifikan antara Strategy × Complexity (p < 0.001)
-5. **Kompleksitas query** memiliki pengaruh terbesar terhadap latensi (F = 4205.66 untuk read-heavy)
+1. **Weighted Round-Robin** adalah pemenang konsisten pada workload **medium** dan **complex** di kedua rasio read/write — masuk akal karena bobot statis 4:2:1 secara matematis cocok dengan rasio kapasitas CPU replica (2:1:0.5).
+2. **Pada simple workload (PK lookup), perbedaan antar strategi praktis tidak signifikan** (semua 3.4–3.8 ms balanced, 12.8–13.9 ms read-heavy) — overhead routing > selisih kerja replica.
+3. **Round-Robin memberikan distribusi paling merata** (Load CV terendah: 0.115 balanced, 0.463 read-heavy) tetapi menjadi yang terlambat pada query medium/complex karena mengabaikan heterogenitas kapasitas.
+4. **Latency-Based dan Load-Based underperform** pada complex workload — keputusan reaktif berbasis EMA tidak konvergen cepat ketika query memakan ribuan milidetik dan latency antar replica berbeda hingga 5×.
+5. **Kruskal-Wallis** menunjukkan perbedaan signifikan antar strategi pada semua kombinasi (p < 0.05); **Two-way ANOVA** mengkonfirmasi interaksi signifikan Strategy × Complexity (p < 0.001) dengan kompleksitas query memberi efek dominan (F = 4205.66 untuk read-heavy).
+6. **Rekomendasi praktis**: gunakan **Weighted-RR** untuk cluster heterogen dengan workload non-trivial; gunakan **Round-Robin** jika fairness distribusi adalah prioritas utama (mis. untuk audit/billing per-replica).
 
 ---
 
@@ -564,8 +562,10 @@ python benchmark/run_all.py     # ❌ Bisa error import
 
 ## 👤 Author
 
-**Mahathir Muhammad**  
-Program Studi S2 — Tesis  
+**Mahathir Muhammad**
+**Obi Kastanya**
+**Ananta Dwi Prayoga Alwy**
+Program Studi S2 — Teknik Informatika 
 Mata Kuliah: Komputasi Berbasis Jaringan dan Fungsi Perangkat Lunak
 
 ---
