@@ -572,4 +572,4 @@ python benchmark/run_all.py     # ❌ Bisa error import
 
 ## Lisensi
 
-Proyek ini dikembangkan untuk keperluan akademis pada mata kuliah **Komputasi Berbasis Jaringan — S2 Tesis**.
+Proyek ini dikembangkan untuk keperluan akademis pada mata kuliah **Komputasi Berbasis Jaringan — S2**.
